@@ -3,6 +3,7 @@ package ilovezc.controller;
 import ilovezc.bean.Student;
 import ilovezc.service.StudentService;
 import ilovezc.util.AjaxResultUtil;
+import ilovezc.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +18,7 @@ public class DispatchController {
     @RequestMapping("/doLogin")
     public AjaxResultUtil doLogin(String id, String password, HttpSession session) {
         AjaxResultUtil result = new AjaxResultUtil();
-        Student student = studentService.queryLogin(id, password);
+        Student student = studentService.queryLogin(id, MD5Util.digest(password));
         session.setAttribute("student", student);
         result.setFlag(student != null);
         return result;
