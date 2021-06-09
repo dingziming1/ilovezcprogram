@@ -1,4 +1,4 @@
-package atcrowdfunding.util;
+package ilovezc.util;
 
 public class StringUtil {
 	public static boolean isEmpty(String s) {
