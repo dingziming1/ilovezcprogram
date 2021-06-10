@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ilovezc.mapper.BookMapper">
+  <resultMap id="BaseResultMap" type="ilovezc.bean.Book">
+    <!--@mbg.generated-->
+    <!--@Table book-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="borrowNum" jdbcType="INTEGER" property="borrownum" />
+    <result column="borrowTime" jdbcType="DOUBLE" property="borrowtime" />
+    <result column="favouriteBook" jdbcType="VARCHAR" property="favouritebook" />
+    <result column="firstBook" jdbcType="VARCHAR" property="firstbook" />
+    <result column="firstBookTime" jdbcType="VARCHAR" property="firstbooktime" />
+    <result column="stuId" jdbcType="VARCHAR" property="stuid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, borrowNum, borrowTime, favouriteBook, firstBook, firstBookTime, stuId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from book
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from book
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="ilovezc.bean.Book">
+    <!--@mbg.generated-->
+    insert into book (id, borrowNum, borrowTime, 
+      favouriteBook, firstBook, firstBookTime, 
+      stuId)
+    values (#{id,jdbcType=VARCHAR}, #{borrownum,jdbcType=INTEGER}, #{borrowtime,jdbcType=DOUBLE}, 
+      #{favouritebook,jdbcType=VARCHAR}, #{firstbook,jdbcType=VARCHAR}, #{firstbooktime,jdbcType=VARCHAR}, 
+      #{stuid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="ilovezc.bean.Book">
+    <!--@mbg.generated-->
+    insert into book
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null and id != ''">
+        id,
+      </if>
+      <if test="borrownum != null">
+        borrowNum,
+      </if>
+      <if test="borrowtime != null">
+        borrowTime,
+      </if>
+      <if test="favouritebook != null and favouritebook != ''">
+        favouriteBook,
+      </if>
+      <if test="firstbook != null and firstbook != ''">
+        firstBook,
+      </if>
+      <if test="firstbooktime != null and firstbooktime != ''">
+        firstBookTime,
+      </if>
+      <if test="stuid != null and stuid != ''">
+        stuId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null and id != ''">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="borrownum != null">
+        #{borrownum,jdbcType=INTEGER},
+      </if>
+      <if test="borrowtime != null">
+        #{borrowtime,jdbcType=DOUBLE},
+      </if>
+      <if test="favouritebook != null and favouritebook != ''">
+        #{favouritebook,jdbcType=VARCHAR},
+      </if>
+      <if test="firstbook != null and firstbook != ''">
+        #{firstbook,jdbcType=VARCHAR},
+      </if>
+      <if test="firstbooktime != null and firstbooktime != ''">
+        #{firstbooktime,jdbcType=VARCHAR},
+      </if>
+      <if test="stuid != null and stuid != ''">
+        #{stuid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="ilovezc.bean.Book">
+    <!--@mbg.generated-->
+    update book
+    <set>
+      <if test="borrownum != null">
+        borrowNum = #{borrownum,jdbcType=INTEGER},
+      </if>
+      <if test="borrowtime != null">
+        borrowTime = #{borrowtime,jdbcType=DOUBLE},
+      </if>
+      <if test="favouritebook != null and favouritebook != ''">
+        favouriteBook = #{favouritebook,jdbcType=VARCHAR},
+      </if>
+      <if test="firstbook != null and firstbook != ''">
+        firstBook = #{firstbook,jdbcType=VARCHAR},
+      </if>
+      <if test="firstbooktime != null and firstbooktime != ''">
+        firstBookTime = #{firstbooktime,jdbcType=VARCHAR},
+      </if>
+      <if test="stuid != null and stuid != ''">
+        stuId = #{stuid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="ilovezc.bean.Book">
+    <!--@mbg.generated-->
+    update book
+    set borrowNum = #{borrownum,jdbcType=INTEGER},
+      borrowTime = #{borrowtime,jdbcType=DOUBLE},
+      favouriteBook = #{favouritebook,jdbcType=VARCHAR},
+      firstBook = #{firstbook,jdbcType=VARCHAR},
+      firstBookTime = #{firstbooktime,jdbcType=VARCHAR},
+      stuId = #{stuid,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByStudentId" resultType="ilovezc.bean.Book">
+    select * from book where stuId = #{id,jdbcType=VARCHAR}
+  </select>
+
+</mapper>
