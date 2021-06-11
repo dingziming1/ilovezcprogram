@@ -29,7 +29,7 @@ public class DispatchController {
         Student student = new Student();
         Student student1 = (Student)session.getAttribute("student");
         if (newpassword.equals(confirmpassword)) {
-            student.setPassword(newpassword);
+            student.setPassword(MD5Util.digest(newpassword));
             student.setId(student1.getId());
             if (studentService.updateByPrimaryKeySelective(student) != 0) {
                 ajaxResultUtil.setFlag(true);
