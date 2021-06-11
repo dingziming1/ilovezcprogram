@@ -76,6 +76,7 @@
 <body>
 
 <div class="container">
+    <h3 style="margin-left: 82px">共有<span style="color:red">${count}</span>位注册人数</h3>
     <img src="/pics/zc.jpg" width="50" height="50" style="border-radius: 90px">
     <span style="line-height: 10px;font-weight: bolder;font-size: 20px">福州大学至诚学院图书馆欢迎您</span>
     <p class="bg-primary" style="font-size: 20px;margin: 21px 102px 20px;">今天你学习了吗</p>

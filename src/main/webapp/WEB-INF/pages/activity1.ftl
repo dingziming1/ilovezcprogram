@@ -49,8 +49,8 @@
 <div class="container" style="margin-top: 170px">
 
     <h3 class="text-muted">${student.name}同学,在过去一年中</h3><br>
-    <h3 class="text-primary">您借阅了<span style="color:red;">${book.borrownum}</span>本书</h3><br>
-    <h3 class="text-danger">借阅时长<span style="color:red;">${book.borrowtime}</span>小时</h3><br>
+    <h3 class="text-primary">您借阅了<span style="color:red;">${(book.borrownum)!"暂无数据"}</span>本书</h3><br>
+    <h3 class="text-danger">借阅时长<span style="color:red;">${(book.borrowtime)!"暂无数据"}</span>小时</h3><br>
     <h3>你一定很爱读书吧</h3><br>
 </div>
 

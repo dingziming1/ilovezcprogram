@@ -129,6 +129,7 @@
 </div>
 <div class="container">
     <button type="button" onclick="window.location.href='/updatepass.html'" class="btn btn-primary btn-lg btn-block">修改密码</button>
+    <button type="button" onclick="window.location.href='/logout.do'" class="btn btn-primary btn-lg btn-block">退出登录</button>
 </div>
 
 <div id="menu" class="menu">

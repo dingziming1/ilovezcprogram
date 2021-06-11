@@ -48,8 +48,8 @@
 <body onclick="window.location.href='/getActivity3.html'">
 <div class="container" style="margin-top: 170px">
 
-    <h3 class="text-muted">在一年中，你在<span style="color:red;">${book.firstbooktime}</span>第一次借的这本<span style="color:red;">${book.firstbook}</span>是否勾起你的回忆</h3><br>
-    <h3 class="text-primary"><span style="color:red;">${book.favouritebook}</span>当之无愧是你最爱的书籍</h3><br>
+    <h3 class="text-muted">在一年中，你在<span style="color:red;">${(book.firstbooktime)!"暂无数据"}</span>第一次借的这本<span style="color:red;">${(book.firstbook)!"暂无数据"}</span>是否勾起你的回忆</h3><br>
+    <h3 class="text-primary"><span style="color:red;">${(book.favouritebook)!"暂无数据"}</span>当之无愧是你最爱的书籍</h3><br>
     <h3 class="text-danger">希望你能够在接下来的一年中继续学习享受学习</h3><br>
 </div>
 
