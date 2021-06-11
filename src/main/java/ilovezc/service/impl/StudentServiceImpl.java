@@ -47,6 +47,11 @@ public class StudentServiceImpl implements StudentService {
         return studentMapper.queryLogin(id,password);
     }
 
+    @Override
+    public int count() {
+        return studentMapper.count();
+    }
+
 }
 
 

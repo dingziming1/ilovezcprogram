@@ -19,4 +19,8 @@ public interface StudentMapper {
     int updateByPrimaryKey(Student record);
 
     Student queryLogin(@Param("id") String id, @Param("password") String password);
+
+    int count();
+
+
 }

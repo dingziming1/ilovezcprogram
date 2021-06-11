@@ -19,6 +19,8 @@ public interface StudentService {
 
     Student queryLogin(String id,String password);
 
+    int count();
+
 }
 
 

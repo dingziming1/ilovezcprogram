@@ -138,4 +138,7 @@
       stuclass = #{stuclass,jdbcType=INTEGER}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  <select id="count" resultType="integer">
+    select count(*) from student
+  </select>
 </mapper>
