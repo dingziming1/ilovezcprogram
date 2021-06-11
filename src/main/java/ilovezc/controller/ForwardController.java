@@ -9,8 +9,12 @@ public class ForwardController {
 //    public String index() {
 //        return "forward:/index.html";
 //    }
+    @Autowired
+    private StudentService studentService;
     @RequestMapping("/main")
-    public String main() {
+    public String main(Map<String,Integer> map) {
+        int count = studentService.count();
+        map.put("count", count);
         return "main";
     }
     @RequestMapping("/info")
