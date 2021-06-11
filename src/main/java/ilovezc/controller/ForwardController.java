@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ForwardController {
-    @RequestMapping("/index")
-    public String index() {
-        return "forward:/index.ftl";
-    }
+//    @RequestMapping("/index")
+//    public String index() {
+//        return "forward:/index.html";
+//    }
     @RequestMapping("/main")
     public String main() {
         return "main";
@@ -24,5 +24,9 @@ public class ForwardController {
     @RequestMapping("/activity")
     public String activity() {
         return "activity";
+    }
+    @RequestMapping("/reg")
+    public String toReg() {
+        return "reg";
     }
 }
