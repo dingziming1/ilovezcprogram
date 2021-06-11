@@ -15,7 +15,7 @@ public class ActivityController {
     @Autowired
     private BookService bookService;
     @RequestMapping("/getActivity1")
-    public String getActivity1(HttpSession session, Map map) {
+    public String getActivity1(HttpSession session, Map<String,Book> map) {
         Student student = (Student) session.getAttribute("student");
         String studentId = student.getId();
         Book book = bookService.selectByStudentId(studentId);
@@ -23,7 +23,7 @@ public class ActivityController {
         return "activity1";
     }
     @RequestMapping("/getActivity2")
-    public String getActivity2(HttpSession session, Map map) {
+    public String getActivity2(HttpSession session, Map<String,Book> map) {
         Student student = (Student) session.getAttribute("student");
         String studentId = student.getId();
         Book book = bookService.selectByStudentId(studentId);
